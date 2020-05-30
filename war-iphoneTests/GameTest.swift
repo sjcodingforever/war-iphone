@@ -11,21 +11,6 @@ class GameTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testCard() {
-        let c1 = Card(rank: Rank.two, suit: Suit.club)
-        XCTAssert(c1.toShortString() == "2C")
-        XCTAssert(c1.toLongString() == "two of clubs")
-    }
-    
-    func testDeck() {
-        let d = Deck()
-        for _ in 0...51 {
-            var _ = d.getCard()
-        }
-        let c = d.getCard()
-        XCTAssert(c == nil)
-    }
-    
     func testGameCreation() {
         let _ = Game()
     }
@@ -367,5 +352,75 @@ class GameTest: XCTestCase {
         XCTAssert(result4.play == .end)
         XCTAssert(result4.player1.actions[0] == .winner)
         XCTAssert(result4.player2.actions[0] == .loser)
+    }
+    
+    func testGame_lastCardForPlayer1IsTie_ThenPlayer1Loses() {
+        let game = Game()
+        let cards1 = [
+            Card(rank: Rank.king, suit: Suit.club), // tie
+        ]
+        let cards2 = [
+            Card(rank: Rank.king, suit: Suit.club),
+            Card(rank: Rank.ace, suit: Suit.club),
+            Card(rank: Rank.three, suit: Suit.club),
+        ]
+        
+        let result1 = game.play(cards1, cards2)
+        XCTAssert(result1.play == .tie)
+        XCTAssert(result1.player1.actions[0] == .showcardup);
+        XCTAssert(result1.player1.cardsToShow[0].rank == .king);
+        XCTAssert(result1.player2.actions[0] == .showcardup);
+        XCTAssert(result1.player2.cardsToShow[0].rank == .king);
+        XCTAssert(result1.player1.cards.count == 1);
+        XCTAssert(result1.player2.cards.count == 3);
+        
+        let result2 = game.play(result1.player1.cards, result1.player2.cards)
+        XCTAssert(result2.play == .play)
+        XCTAssert(result2.player1.actions[0] == .showcardup);
+        XCTAssert(result2.player1.cardsToShow[0].rank == .king);
+        XCTAssert(result2.player2.actions[0] == .showcardup);
+        XCTAssert(result2.player2.cardsToShow[0].rank == .ace);
+        XCTAssert(result2.player1.cards.count == 0);
+        XCTAssert(result2.player2.cards.count == 4);
+        
+        let result3 = game.play(result2.player1.cards, result2.player2.cards)
+        XCTAssert(result3.play == .end)
+        XCTAssert(result3.player1.actions[0] == .loser)
+        XCTAssert(result3.player2.actions[0] == .winner)
+    }
+    
+    func testGame_lastCardForPlayer2IsTie_ThenPlayer2Loses() {
+        let game = Game()
+        let cards1 = [
+            Card(rank: Rank.king, suit: Suit.club),
+            Card(rank: Rank.ace, suit: Suit.club),
+            Card(rank: Rank.three, suit: Suit.club),
+        ]
+        let cards2 = [
+            Card(rank: Rank.king, suit: Suit.club), // tie
+        ]
+        
+        let result1 = game.play(cards1, cards2)
+        XCTAssert(result1.play == .tie)
+        XCTAssert(result1.player1.actions[0] == .showcardup);
+        XCTAssert(result1.player1.cardsToShow[0].rank == .king);
+        XCTAssert(result1.player2.actions[0] == .showcardup);
+        XCTAssert(result1.player2.cardsToShow[0].rank == .king);
+        XCTAssert(result1.player1.cards.count == 3);
+        XCTAssert(result1.player2.cards.count == 1);
+        
+        let result2 = game.play(result1.player1.cards, result1.player2.cards)
+        XCTAssert(result2.play == .play)
+        XCTAssert(result2.player1.actions[0] == .showcardup);
+        XCTAssert(result2.player1.cardsToShow[0].rank == .ace);
+        XCTAssert(result2.player2.actions[0] == .showcardup);
+        XCTAssert(result2.player2.cardsToShow[0].rank == .king);
+        XCTAssert(result2.player1.cards.count == 4);
+        XCTAssert(result2.player2.cards.count == 0);
+        
+        let result3 = game.play(result2.player1.cards, result2.player2.cards)
+        XCTAssert(result3.play == .end)
+        XCTAssert(result3.player1.actions[0] == .winner)
+        XCTAssert(result3.player2.actions[0] == .loser)
     }
 }

@@ -42,6 +42,23 @@ class Game {
         return .equal
     }
     
+    func newGame() -> GameResult {
+        let deck = Deck()
+        deck.shuffle()
+        let game = GameResult()
+        for _ in 0...25 {
+            game.player1.cards.append(deck.getCard()!)
+        }
+        for _ in 0...25 {
+            game.player2.cards.append(deck.getCard()!)
+        }
+        return game;
+    }
+    
+    func play(_ result: GameResult) -> GameResult {
+        return result;
+    }
+    
     func play(_ inCards1: [Card], _ inCards2: [Card], _ tieCards: [Card]?=nil) -> GameResult {
         let result = GameResult()
         if(inCards2.count == 0) {
@@ -125,6 +142,25 @@ class Game {
             result.player1.cards += cards1
         } else {
             result.play = .tie
+            if(cards1.count == 0) {
+                result.player1.actions.append(.showcardup)
+                result.player2.actions.append(.showcardup)
+                result.player1.cardsToShow.append(card1)
+                result.player2.cardsToShow.append(card2)
+                result.player1.cards = [card1]
+                result.player2.cards = cards2
+                result.player2.cards.append(card2)
+                return result
+            } else if cards2.count == 0 {
+                result.player1.actions.append(.showcardup)
+                result.player2.actions.append(.showcardup)
+                result.player1.cardsToShow.append(card1)
+                result.player2.cardsToShow.append(card2)
+                result.player1.cards = cards1
+                result.player1.cards.append(card1)
+                result.player2.cards = [card2]
+                return result
+            }
             result.player1.actions.append(.showcardup)
             result.player2.actions.append(.showcardup)
             result.player1.cardsToShow.append(card1)

@@ -22,6 +22,8 @@
 		9D1CB9C2247629CD008EEF35 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9C0247629CD008EEF35 /* Card.swift */; };
 		9D1CB9C524763579008EEF35 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9C424763579008EEF35 /* Deck.swift */; };
 		9D1CB9C624763579008EEF35 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9C424763579008EEF35 /* Deck.swift */; };
+		9DA5EDC0248221A200EA0B6C /* DeckTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA5EDBF248221A200EA0B6C /* DeckTest.swift */; };
+		9DA5EDC22482224300EA0B6C /* CardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA5EDC12482224300EA0B6C /* CardTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		9D1CB9C0247629CD008EEF35 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		9D1CB9C32476311F008EEF35 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9D1CB9C424763579008EEF35 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		9DA5EDBF248221A200EA0B6C /* DeckTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTest.swift; sourceTree = "<group>"; };
+		9DA5EDC12482224300EA0B6C /* CardTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 				9D1CB9A1247627C7008EEF35 /* war_iphoneTests.swift */,
 				9D1CB9A3247627C7008EEF35 /* Info.plist */,
 				9D1CB9BE24762855008EEF35 /* GameTest.swift */,
+				9DA5EDBF248221A200EA0B6C /* DeckTest.swift */,
+				9DA5EDC12482224300EA0B6C /* CardTest.swift */,
 			);
 			path = "war-iphoneTests";
 			sourceTree = "<group>";
@@ -307,9 +313,11 @@
 			files = (
 				9D1CB9A2247627C7008EEF35 /* war_iphoneTests.swift in Sources */,
 				9D1CB9BD24762830008EEF35 /* Game.swift in Sources */,
+				9DA5EDC0248221A200EA0B6C /* DeckTest.swift in Sources */,
 				9D1CB9C624763579008EEF35 /* Deck.swift in Sources */,
 				9D1CB9BF24762855008EEF35 /* GameTest.swift in Sources */,
 				9D1CB9C2247629CD008EEF35 /* Card.swift in Sources */,
+				9DA5EDC22482224300EA0B6C /* CardTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
