@@ -15,6 +15,13 @@
 		9D1CB997247627C7008EEF35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1CB995247627C7008EEF35 /* LaunchScreen.storyboard */; };
 		9D1CB9A2247627C7008EEF35 /* war_iphoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9A1247627C7008EEF35 /* war_iphoneTests.swift */; };
 		9D1CB9AD247627C7008EEF35 /* war_iphoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9AC247627C7008EEF35 /* war_iphoneUITests.swift */; };
+		9D1CB9BC24762830008EEF35 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9BB24762830008EEF35 /* Game.swift */; };
+		9D1CB9BD24762830008EEF35 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9BB24762830008EEF35 /* Game.swift */; };
+		9D1CB9BF24762855008EEF35 /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9BE24762855008EEF35 /* GameTest.swift */; };
+		9D1CB9C1247629CD008EEF35 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9C0247629CD008EEF35 /* Card.swift */; };
+		9D1CB9C2247629CD008EEF35 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9C0247629CD008EEF35 /* Card.swift */; };
+		9D1CB9C524763579008EEF35 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9C424763579008EEF35 /* Deck.swift */; };
+		9D1CB9C624763579008EEF35 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1CB9C424763579008EEF35 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,11 @@
 		9D1CB9A8247627C7008EEF35 /* war-iphoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "war-iphoneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1CB9AC247627C7008EEF35 /* war_iphoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = war_iphoneUITests.swift; sourceTree = "<group>"; };
 		9D1CB9AE247627C7008EEF35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D1CB9BB24762830008EEF35 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		9D1CB9BE24762855008EEF35 /* GameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTest.swift; sourceTree = "<group>"; };
+		9D1CB9C0247629CD008EEF35 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		9D1CB9C32476311F008EEF35 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9D1CB9C424763579008EEF35 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 		9D1CB989247627C6008EEF35 /* war-iphone */ = {
 			isa = PBXGroup;
 			children = (
+				9D1CB9BA24762808008EEF35 /* Game */,
 				9D1CB98A247627C6008EEF35 /* AppDelegate.swift */,
 				9D1CB98C247627C6008EEF35 /* SceneDelegate.swift */,
 				9D1CB98E247627C6008EEF35 /* ContentView.swift */,
@@ -123,6 +136,7 @@
 			children = (
 				9D1CB9A1247627C7008EEF35 /* war_iphoneTests.swift */,
 				9D1CB9A3247627C7008EEF35 /* Info.plist */,
+				9D1CB9BE24762855008EEF35 /* GameTest.swift */,
 			);
 			path = "war-iphoneTests";
 			sourceTree = "<group>";
@@ -134,6 +148,17 @@
 				9D1CB9AE247627C7008EEF35 /* Info.plist */,
 			);
 			path = "war-iphoneUITests";
+			sourceTree = "<group>";
+		};
+		9D1CB9BA24762808008EEF35 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				9D1CB9C32476311F008EEF35 /* MyPlayground.playground */,
+				9D1CB9BB24762830008EEF35 /* Game.swift */,
+				9D1CB9C0247629CD008EEF35 /* Card.swift */,
+				9D1CB9C424763579008EEF35 /* Deck.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1CB9C524763579008EEF35 /* Deck.swift in Sources */,
 				9D1CB98B247627C6008EEF35 /* AppDelegate.swift in Sources */,
+				9D1CB9BC24762830008EEF35 /* Game.swift in Sources */,
+				9D1CB9C1247629CD008EEF35 /* Card.swift in Sources */,
 				9D1CB98D247627C6008EEF35 /* SceneDelegate.swift in Sources */,
 				9D1CB98F247627C6008EEF35 /* ContentView.swift in Sources */,
 			);
@@ -278,6 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1CB9A2247627C7008EEF35 /* war_iphoneTests.swift in Sources */,
+				9D1CB9BD24762830008EEF35 /* Game.swift in Sources */,
+				9D1CB9C624763579008EEF35 /* Deck.swift in Sources */,
+				9D1CB9BF24762855008EEF35 /* GameTest.swift in Sources */,
+				9D1CB9C2247629CD008EEF35 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
